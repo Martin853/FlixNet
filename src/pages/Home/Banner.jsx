@@ -2,6 +2,7 @@ import React from "react";
 import { AiFillStar } from "react-icons/ai";
 import { BsArrowLeftCircle, BsArrowRightCircle } from "react-icons/bs";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 export const Banner = ({ movie, index, currentMovie, setMovie }) => {
   const releaseYear = movie.release_date.split("-")[0];
@@ -64,9 +65,12 @@ export const Banner = ({ movie, index, currentMovie, setMovie }) => {
           </div>
         </div>
         <p className='hidden sm:block text-sm'>{movie.overview}</p>
-        <button className='w-fit h-fit py-2 px-6 text-xl text-white border-2 border-white rounded-lg hover:cursor-pointer hover:bg-white hover:text-black ease-in-out transition-all duration-300'>
+        <Link
+          to={`/movie/${movie.id}`}
+          className='w-fit h-fit py-2 px-6 text-xl text-white border-2 border-white rounded-lg hover:cursor-pointer hover:bg-white hover:text-black ease-in-out transition-all duration-300'
+        >
           More
-        </button>
+        </Link>
       </div>
     </motion.div>
   );

@@ -4,6 +4,7 @@ import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
 import { MobileDesktopNavbar } from "./MobileDesktopNavbar";
 import { motion } from "framer-motion";
 import { SearchBar } from "./SearchBar";
+import { Link } from "react-router-dom";
 
 export const Navbar = () => {
   const [open, setOpen] = useState(false);
@@ -21,22 +22,24 @@ export const Navbar = () => {
   return (
     <div className='flex flex-col w-full'>
       <nav className='w-full h-fit flex items-center justify-between'>
-        <motion.div
-          className='flex gap-3 items-center'
-          initial={{ opacity: 0, x: -50 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ delay: 0.3 }}
-        >
-          <img src={logo} className='w-10 mb-2 sm:w-15' />
-          <motion.h1
-            className='text-2xl sm:text-3xl font-bold'
-            initial={{ opacity: 0, x: -20 }}
+        <Link to={"/"}>
+          <motion.div
+            className='flex gap-3 items-center'
+            initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
-            transition={{ delay: 0.45 }}
+            transition={{ delay: 0.3 }}
           >
-            Flix Net
-          </motion.h1>
-        </motion.div>
+            <img src={logo} className='w-10 mb-2 sm:w-15' />
+            <motion.h1
+              className='text-2xl sm:text-3xl font-bold'
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: 0.45 }}
+            >
+              Flix Net
+            </motion.h1>
+          </motion.div>
+        </Link>
         <div className='hidden md:block w-5/12'>
           <SearchBar />
         </div>

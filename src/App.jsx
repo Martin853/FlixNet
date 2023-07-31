@@ -3,6 +3,7 @@ import { Navbar } from "./components/Navbar";
 import { MobileDesktopNavbar } from "./components/MobileDesktopNavbar";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Home } from "./pages/Home";
+import { DetailedPage } from "./pages/DetailedPage";
 
 export const App = () => {
   return (
@@ -19,6 +20,7 @@ export const App = () => {
           <div className='w-full'>
             <Routes>
               <Route path='/' element={<Home />} />
+              <Route path='/movie/:id' element={<DetailedPage />} />
             </Routes>
           </div>
         </div>
