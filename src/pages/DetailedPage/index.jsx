@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { DetailedBanner } from "./DetailedBanner";
-import { Cast } from "./Cast";
 
 export const DetailedPage = () => {
   const { id } = useParams();
@@ -29,7 +28,6 @@ export const DetailedPage = () => {
       {movie && (
         <div className='w-full flex flex-col gap-4'>
           <DetailedBanner movie={movie} />
-          <Cast id={id} />
         </div>
       )}
     </div>
