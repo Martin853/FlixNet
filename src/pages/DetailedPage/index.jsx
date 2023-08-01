@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import { DetailedBanner } from "./DetailedBanner";
 import { MoreInformation } from "./MoreInformation";
 import { CastSection } from "./CastSection";
+import { ClipsSection } from "./ClipsSection";
 
 export const DetailedPage = () => {
   const { id } = useParams();
@@ -25,8 +26,6 @@ export const DetailedPage = () => {
       .catch((err) => console.error(err));
   }, [id]);
 
-  console.log(movie);
-
   return (
     <div className='w-full h-full'>
       {movie && (
@@ -34,6 +33,7 @@ export const DetailedPage = () => {
           <DetailedBanner movie={movie} />
           <MoreInformation movie={movie} />
           <CastSection id={id} />
+          <ClipsSection id={id} />
         </div>
       )}
     </div>

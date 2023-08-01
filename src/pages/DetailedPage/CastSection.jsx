@@ -4,8 +4,6 @@ import { CastCard } from "./CastCard";
 export const CastSection = ({ id }) => {
   const [cast, setCast] = useState(null);
 
-  console.log(cast);
-
   // API Call
 
   const options = {
