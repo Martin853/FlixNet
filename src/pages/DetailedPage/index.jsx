@@ -1,12 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { DetailedBanner } from "./DetailedBanner";
+import { Cast } from "./Cast";
 
 export const DetailedPage = () => {
   const { id } = useParams();
   const [movie, setMovie] = useState();
-
-  console.log(movie);
 
   // API Call
 
@@ -14,8 +13,7 @@ export const DetailedPage = () => {
     method: "GET",
     headers: {
       accept: "application/json",
-      Authorization:
-        "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJlYTk0Y2MzM2Q4MmM1YTVmN2NkNmNiMmQ0ZjBhNmUzNSIsInN1YiI6IjY0YmZlOTk2NmVlM2Q3MDBjN2ZiMWQ0NSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.cqKZ_hZhlpnbXZqTbLuS2J4le_STmHcZSo4izYlfARo",
+      Authorization: `Bearer ${import.meta.env.VITE_API_KEY}`,
     },
   };
 
@@ -29,7 +27,10 @@ export const DetailedPage = () => {
   return (
     <div className='w-full h-full'>
       {movie && (
-        <DetailedBanner movie={movie}/>
+        <div className='w-full flex flex-col gap-4'>
+          <DetailedBanner movie={movie} />
+          <Cast id={id} />
+        </div>
       )}
     </div>
   );

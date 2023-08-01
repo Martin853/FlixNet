@@ -15,11 +15,13 @@ export const DetailedBanner = ({movie}) => {
             <img
               src={import.meta.env.VITE_IMAGE_PATH + movie.backdrop_path}
               className='rounded-lg w-full h-96 object-cover object-center'
+              loading='lazy'
             />
             <div className='absolute w-full h-full flex justify-center lg:justify-start items-center gap-4'>
               <img
                 src={import.meta.env.VITE_IMAGE_PATH + movie.poster_path}
                 className='sm:ml-8 h-3/4 rounded-lg z-50 relative object-cover object-center'
+                loading='lazy'
               />
               <div className='hidden lg:flex flex-col gap-2 relative z-50'>
                 <div className='flex flex-col gap-1'>
