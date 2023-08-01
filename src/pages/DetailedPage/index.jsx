@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { DetailedBanner } from "./DetailedBanner";
 import { MoreInformation } from "./MoreInformation";
+import { CastSection } from "./CastSection";
 
 export const DetailedPage = () => {
   const { id } = useParams();
@@ -32,6 +33,7 @@ export const DetailedPage = () => {
         <div className='w-full flex flex-col gap-4'>
           <DetailedBanner movie={movie} />
           <MoreInformation movie={movie} />
+          <CastSection id={id} />
         </div>
       )}
     </div>

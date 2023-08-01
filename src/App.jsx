@@ -17,7 +17,7 @@ export const App = () => {
           <div className='hidden md:block w-3/12'>
             <MobileDesktopNavbar />
           </div>
-          <div className='w-full'>
+          <div className='w-full md:w-9/12'>
             <Routes>
               <Route path='/' element={<Home />} />
               <Route path='/movie/:id' element={<DetailedPage />} />

@@ -11,12 +11,9 @@ export const MoreInformation = ({ movie }) => {
       <h1>Budget: {movie.budget}$</h1>
       <h1>Revenue: {movie.revenue}$</h1>
       {homepage && (
-        <div className='flex gap-2'>
-          <h1>Website:</h1>{" "}
-          <a href={homepage} target='blank' className='text-blue-500'>
-            {homepage}
-          </a>
-        </div>
+        <a href={homepage} target='blank' className='text-blue-500'>
+          {"Website"}
+        </a>
       )}
     </div>
   );
