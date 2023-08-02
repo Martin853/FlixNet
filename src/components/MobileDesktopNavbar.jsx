@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import genres from "../data/genres";
 import languages from "../data/languages";
 import { SearchBar } from "./SearchBar";
+import { Link } from "react-router-dom";
 
 export const MobileDesktopNavbar = () => {
   const containerVariants = {
@@ -34,13 +35,14 @@ export const MobileDesktopNavbar = () => {
         Genre
       </motion.h1>
       {genres.map((genre) => (
-        <motion.h1
-          key={genre.id}
-          className='text-neutral-400 hover:text-neutral-500 cursor-pointer'
-          variants={itemVariants}
-        >
-          {genre.name}
-        </motion.h1>
+        <Link to={`/genre/${genre.id}`} key={genre.id}>
+          <motion.h1
+            className='text-neutral-400 hover:text-neutral-500 cursor-pointer'
+            variants={itemVariants}
+          >
+            {genre.name}
+          </motion.h1>
+        </Link>
       ))}
       <motion.h1 className='text-lg' variants={itemVariants}>
         Language

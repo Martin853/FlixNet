@@ -5,6 +5,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Home } from "./pages/Home";
 import { DetailedPage } from "./pages/DetailedPage";
 import { ErrorPage } from "./pages/ErrorPage";
+import { GenrePage } from "./pages/GenrePage";
 
 export const App = () => {
   return (
@@ -22,6 +23,7 @@ export const App = () => {
             <Routes>
               <Route path='/' element={<Home />} />
               <Route path='/movie/:id' element={<DetailedPage />} />
+              <Route path='/genre/:id' element={<GenrePage />} />
               <Route path='*' element={<ErrorPage />} />
             </Routes>
           </div>
