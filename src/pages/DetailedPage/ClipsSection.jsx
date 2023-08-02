@@ -1,8 +1,11 @@
 import React, { useEffect, useState } from "react";
+import { motion } from "framer-motion";
 
 export const ClipsSection = ({ id }) => {
   const [videos, setVideos] = useState(null);
   const [currentVideo, setCurrentVideo] = useState(0);
+
+  // API Call
 
   const options = {
     method: "GET",
@@ -37,10 +40,23 @@ export const ClipsSection = ({ id }) => {
     setCurrentVideo((currentVideo) => currentVideo + 1);
   };
 
+  const mainDivVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0 },
+    exit: { opacity: 0, y: -20 },
+  };
+
   return (
-    <div className='w-full h-fit p-4 bg-cyan-800 rounded-lg flex flex-col gap-4 '>
+    <motion.div
+      initial='hidden'
+      animate='visible'
+      exit='exit'
+      variants={mainDivVariants}
+      transition={{ duration: 0.5, ease: "easeInOut" }}
+      className='w-full h-fit p-4 bg-cyan-800 rounded-lg flex flex-col gap-4 '
+    >
       <h1 className='text-xl font-semibold'>Clips</h1>
-      {videos && (
+      {videos && videos.length > 0 && (
         <div className='aspect-video' key={videos[currentVideo].key}>
           <iframe
             src={`https://www.youtube.com/embed/${videos[currentVideo].key}`}
@@ -64,6 +80,6 @@ export const ClipsSection = ({ id }) => {
           Next
         </button>
       </div>
-    </div>
+    </motion.div>
   );
 };

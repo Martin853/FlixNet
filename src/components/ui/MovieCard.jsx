@@ -1,12 +1,15 @@
 import React from "react";
+import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import placeholder from "../../assets/Placeholder.png";
 
 export const MovieCard = ({ movie }) => {
-  console.log(movie);
-
   return (
-    <div className='inline-block mx-2'>
+    <motion.div
+      whileHover={{ scale: 1.05 }}
+      key={movie.id}
+      className='inline-block mx-2'
+    >
       <Link to={`/movie/${movie.id}`}>
         <img
           src={
@@ -14,10 +17,10 @@ export const MovieCard = ({ movie }) => {
               ? placeholder
               : import.meta.env.VITE_IMAGE_PATH + movie.poster_path
           }
-          className='w-40 rounded-lg'
+          className='w-40 h-auto rounded-lg'
           loading='lazy'
         ></img>
       </Link>
-    </div>
+    </motion.div>
   );
 };

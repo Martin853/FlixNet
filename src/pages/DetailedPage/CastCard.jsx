@@ -1,11 +1,15 @@
 import React, { useState } from "react";
 import placeholder from "../../assets/Placeholder.png";
+import { motion } from "framer-motion";
 
 export const CastCard = ({ actor }) => {
   const [imageLoaded, setImageLoaded] = useState(false);
 
   return (
-    <div className='inline-block mx-2 w-36 shadow-2xl'>
+    <motion.div
+      whileHover={{ scale: 1.05 }}
+      className='inline-block mx-2 w-36 shadow-2xl'
+    >
       <div className='w-full h-full flex flex-col justify-start'>
         <img
           src={
@@ -29,6 +33,6 @@ export const CastCard = ({ actor }) => {
           </h1>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
