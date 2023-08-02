@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { MovieCardGrid } from "../../components/ui/MovieCardGrid";
+import { AiOutlineLoading } from "react-icons/ai";
 
 export const GenrePage = () => {
   const { id } = useParams();
@@ -26,6 +27,15 @@ export const GenrePage = () => {
       .then((response) => setMovies(response.results))
       .catch((err) => console.error(err));
   }, [id]);
+
+  if (!movies) {
+    return (
+      <div className='w-full h-full flex flex-col gap-3 justify-center items-center'>
+        <h1 className='text-2xl font-bold'>Loading...</h1>
+        <AiOutlineLoading className='text-4xl animate-spin' />
+      </div>
+    );
+  }
 
   return (
     <div className='w-full h-fit p-4 flex flex-col gap-4'>
