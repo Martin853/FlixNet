@@ -4,6 +4,7 @@ import { DetailedBanner } from "./DetailedBanner";
 import { MoreInformation } from "./MoreInformation";
 import { CastSection } from "./CastSection";
 import { ClipsSection } from "./ClipsSection";
+import { Recommended } from "./Recommended";
 
 export const DetailedPage = () => {
   const { id } = useParams();
@@ -34,6 +35,7 @@ export const DetailedPage = () => {
           <MoreInformation movie={movie} />
           <CastSection id={id} />
           <ClipsSection id={id} />
+          <Recommended id={id} />
         </div>
       )}
     </div>
