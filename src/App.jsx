@@ -6,6 +6,7 @@ import { Home } from "./pages/Home";
 import { DetailedPage } from "./pages/DetailedPage";
 import { ErrorPage } from "./pages/ErrorPage";
 import { GenrePage } from "./pages/GenrePage";
+import { SearchPage } from "./pages/SearchPage";
 
 export const App = () => {
   return (
@@ -24,6 +25,7 @@ export const App = () => {
               <Route path='/' element={<Home />} />
               <Route path='/movie/:id' element={<DetailedPage />} />
               <Route path='/genre/:id' element={<GenrePage />} />
+              <Route path='/search/:query' element={<SearchPage />} />
               <Route path='*' element={<ErrorPage />} />
             </Routes>
           </div>
