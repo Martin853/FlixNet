@@ -25,8 +25,6 @@ export const HeroSection = () => {
       .catch((err) => console.error(err));
   }, []);
 
-  console.log(movies);
-
   return (
     <section className='w-full h-96 relative'>
       {movies &&
