@@ -1,7 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
 import genres from "../data/genres";
-import languages from "../data/languages";
 import { SearchBar } from "./SearchBar";
 import { Link } from "react-router-dom";
 
@@ -43,18 +42,6 @@ export const MobileDesktopNavbar = () => {
             {genre.name}
           </motion.h1>
         </Link>
-      ))}
-      <motion.h1 className='text-lg' variants={itemVariants}>
-        Language
-      </motion.h1>
-      {languages.map((language) => (
-        <motion.h1
-          key={language.iso_639_1}
-          className='text-neutral-400 hover:text-neutral-500 cursor-pointer'
-          variants={itemVariants}
-        >
-          {language.name}
-        </motion.h1>
       ))}
     </motion.div>
   );
