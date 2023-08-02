@@ -4,6 +4,7 @@ import { MobileDesktopNavbar } from "./components/MobileDesktopNavbar";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Home } from "./pages/Home";
 import { DetailedPage } from "./pages/DetailedPage";
+import { ErrorPage } from "./pages/ErrorPage";
 
 export const App = () => {
   return (
@@ -21,6 +22,7 @@ export const App = () => {
             <Routes>
               <Route path='/' element={<Home />} />
               <Route path='/movie/:id' element={<DetailedPage />} />
+              <Route path='*' element={<ErrorPage />} />
             </Routes>
           </div>
         </div>
