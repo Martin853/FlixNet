@@ -2,8 +2,6 @@ FlixNet🎬
 
 Welcome to the GitHub repository for FlixNet, the ultimate movie destination powered by the TMDb API. This repository contains the source code for the FlixNet website, built using React and Tailwind CSS, where users can explore, discover, and interact with a vast collection of movies.
 
-Website Link: <a href="flex-net.netlify.app">flex-net.netlify.app</a>
-
 🔍 Features of the Repository:
 
 🚀 React Components: The src/components and src/pages directory houses all the React components used to create the user interface of the FlixNet website. These components are modular and reusable, promoting a clean and organized codebase.
