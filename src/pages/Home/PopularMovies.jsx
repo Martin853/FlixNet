@@ -52,7 +52,7 @@ export const PopularMovies = () => {
       exit='exit'
       variants={mainDivVariants}
       transition={{ duration: 0.5, ease: "easeInOut" }}
-      className='w-full h-fit p-4 bg-cyan-800 rounded-lg'
+      className='w-full h-fit p-4 bg-cyan-900 rounded-lg'
     >
       <h1 className='text-xl font-semibold'>Popular Movies</h1>
       <div className='w-full h-fit overflow-x-auto overflow-y-hidden whitespace-nowrap py-4 scrollbar-thin scrollbar-track-cyan-900 scrollbar-thumb-cyan-950 scrollbar-track-rounded-lg scrollbar-thumb-rounded-lg'>
