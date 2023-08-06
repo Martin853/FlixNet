@@ -20,7 +20,7 @@ export const Navbar = () => {
   };
 
   return (
-    <div className='flex flex-col w-full'>
+    <div className='flex flex-col w-full relative z-10'>
       <nav className='w-full h-fit flex items-center justify-between'>
         <Link to={"/"}>
           <motion.div

@@ -12,11 +12,11 @@ export const App = () => {
   return (
     <BrowserRouter>
       <div
-        className='font-poppins w-full min-h-screen p-4 sm:p-8 md:p-12 bg-gradient-to-b from-sky-950 to-black text-white flex flex-col gap-3'
+        className='font-poppins w-full min-h-screen p-4 sm:p-8 md:p-12 bg-gradient-to-b from-sky-950 to-black text-white flex flex-col gap-3 relative'
         style={{ minHeight: "100svh" }}
       >
         <Navbar />
-        <div className='w-full h-full flex gap-5'>
+        <div className='w-full h-full flex gap-5 relative z-10'>
           <div className='hidden md:block w-3/12'>
             <MobileDesktopNavbar />
           </div>
@@ -30,6 +30,10 @@ export const App = () => {
             </Routes>
           </div>
         </div>
+
+        {/* Gradients */}
+        <div className='absolute z-0 w-[20%] h-[20%] top-0 right-0 pink__gradient' />
+        <div className='absolute z-0 w-[20%] h-[20%] bottom-40 left-0 white__gradient' />
       </div>
     </BrowserRouter>
   );
